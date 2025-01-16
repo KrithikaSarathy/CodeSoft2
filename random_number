@@ -1,0 +1,52 @@
+code:
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+void guessTheNumber() {
+    cout << "Welcome to the 'Guess the Number' game!" << endl;
+    cout << "I have chosen a number between 1 and 100. Can you guess it?" << endl;
+
+    // Seed the random number generator with the current time
+    srand(time(0));
+    int numberToGuess = (rand() % 100) + 1; // Random number between 1 and 100
+    int userGuess = 0;
+
+    while (true) {
+        cout << "Enter your guess: ";
+        cin >> userGuess;
+
+        if (userGuess < numberToGuess) {
+            cout << "Too low! Try again." << endl;
+        } else if (userGuess > numberToGuess) {
+            cout << "Too high! Try again." << endl;
+        } else {
+            cout << "Congratulations! You guessed it. The number was " << numberToGuess << "." << endl;
+            break;
+        }
+    }
+}
+
+int main() {
+    guessTheNumber();
+    return 0;
+}
+
+
+
+
+output:
+Welcome to the 'Guess the Number' game!
+I have chosen a number between 1 and 100. Can you guess it?
+Enter your guess: 45
+Too low! Try again.
+Enter your guess: 50
+Too low! Try again.
+Enter your guess: 90
+Too low! Try again.
+Enter your guess: 95
+Too low! Try again.
+Enter your guess: 99
+Congratulations! You guessed it. The number was 99.
